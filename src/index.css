@@ -8,8 +8,9 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Light Mode */
     --background: 0 0% 100%;
-    --foreground: 240 10% 4%;
+    --foreground: 240 10% 4%; /* Black text */
 
     --card: 0 0% 100%;
     --card-foreground: 240 10% 4%;
@@ -17,14 +18,14 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 4%;
 
-    --primary: 262 83% 58%;
+    --primary: 142 83% 40%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 240 5% 96%;
     --secondary-foreground: 240 6% 10%;
 
     --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 46%;
+    --muted-foreground: 240 4% 46%; /* Gray placeholder/muted text */
 
     --accent: 240 5% 96%;
     --accent-foreground: 240 6% 10%;
@@ -38,14 +39,19 @@ All colors MUST be HSL.
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
 
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 262 83% 58%;
+    --border: 0 0% 0%;
+    
+    /* FIX: Set light mode input to white background with dark text */
+    --input: 0 0% 100%; /* White background for input */
+    --input-foreground: 240 10% 4%; /* Black text for input */
+
+    --ring: 142 83% 40%;
 
     --radius: 0.75rem;
   }
 
   .dark {
+    /* Dark Mode */
     --background: 240 10% 4%;
     --foreground: 0 0% 98%;
 
@@ -55,7 +61,7 @@ All colors MUST be HSL.
     --popover: 240 6% 10%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 262 83% 58%;
+    --primary: 142 83% 40%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 240 4% 16%;
@@ -76,9 +82,13 @@ All colors MUST be HSL.
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
 
-    --border: 240 4% 16%;
-    --input: 240 4% 16%;
-    --ring: 262 83% 58%;
+   --border: 0 0% 0%;
+    
+    /* FIX: Set dark mode input to dark background with light text */
+    --input: 240 6% 10%; /* Dark background for input, matching card */
+    --input-foreground: 0 0% 98%; /* Light text for input */
+    
+    --ring: 142 83% 40%;
   }
 }
 
@@ -89,5 +99,21 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* FIX: Manually apply input styles to the DaisyUI input component to 
+  ensure it respects the foreground and background variables. 
+*/
+@layer components {
+  .input-bordered {
+    background-color: hsl(var(--input));
+    color: hsl(var(--input-foreground));
+    border-color: hsl(var(--border));
+  }
+  
+  /* Style the placeholder text */
+  .input-bordered::placeholder {
+    color: hsl(var(--muted-foreground));
   }
 }

@@ -117,7 +117,7 @@ const handleDetect = async () => {
       <div className="card bg-card border border-border mb-6">
         <div className="card-body">
           <div className="flex items-center gap-2 mb-4">
-            <div className="badge badge-primary badge-lg">Step 1</div>
+            <div className="badge badge-outline badge-lg">Step 1</div>
             <h2 className="card-title text-2xl">Generate Test Code</h2>
           </div>
           
@@ -129,7 +129,7 @@ const handleDetect = async () => {
               <input
                 type="email"
                 placeholder="your@email.com"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full border-2 dark:border-gray-500 px-4 sm:px-6 py-2"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={!!testCode}
@@ -144,7 +144,7 @@ const handleDetect = async () => {
             {!testCode && (
               <button
                 type="submit"
-                className="btn btn-primary w-full sm:w-auto gap-2"
+                className="btn btn-primary w-full sm:w-auto gap-2 px-4 sm:px-6 py-2"
                 disabled={loading}
               >
                 {loading ? (
@@ -163,11 +163,11 @@ const handleDetect = async () => {
           </form>
 
           {testCode && (
-            <div className="mt-6 p-4 bg-primary/10 border border-primary rounded-lg animate-scale-in">
+            <div className="mt-6 p-4 bg-green-500/10 border border-green-500 rounded-lg animate-scale-in">
               <div className="flex items-center justify-between flex-wrap gap-4">
                 <div>
                   <div className="text-sm text-muted-foreground mb-1">Your Test Code:</div>
-                  <div className="text-2xl font-bold font-mono text-primary">{testCode}</div>
+                  <div className="text-2xl font-bold font-mono text-green-500">{testCode}</div>
                 </div>
                 <button
                   onClick={handleCopyCode}
@@ -196,13 +196,13 @@ const handleDetect = async () => {
         <div className="card bg-card border border-border mb-6 animate-fade-in">
           <div className="card-body">
             <div className="flex items-center gap-2 mb-4">
-              <div className="badge badge-primary badge-lg">Step 2</div>
+              <div className="badge badge-outline badge-lg">Step 2</div>
               <h2 className="card-title text-2xl">Send Your Email</h2>
             </div>
             
             <p className="text-muted-foreground mb-4">
               Send an email to all test inboxes below. Make sure to include your test code{' '}
-              <span className="font-mono font-bold text-primary">{testCode}</span> in the subject or body.
+              <span className="font-mono font-bold text-green-500">{testCode}</span> in the subject or body.
             </p>
 
             <div className="space-y-3">
@@ -227,7 +227,7 @@ const handleDetect = async () => {
               ))}
             </div>
 
-            <div className="alert alert-warning mt-4">
+            <div className="alert alert-soft mt-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
               </svg>
@@ -242,7 +242,7 @@ const handleDetect = async () => {
         <div className="card bg-card border border-border animate-fade-in">
           <div className="card-body">
             <div className="flex items-center gap-2 mb-4">
-              <div className="badge badge-primary badge-lg">Step 3</div>
+              <div className="badge badge-outline badge-lg">Step 3</div>
               <h2 className="card-title text-2xl">Detect & Analyze</h2>
             </div>
             

@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="animate-fade-in">
       <section className="text-center mb-16">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">
           Email Deliverability Testing
         </h1>
         <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -23,9 +23,9 @@ const Home = () => {
 
       {/* Features Grid */}
       <section className="grid md:grid-cols-3 gap-6 mb-16">
-        <div className="card bg-card border border-border hover:border-primary transition-all hover:scale-105">
+        <div className="card bg-card border border-border hover:border-green-500 transition-all hover:scale-105">
           <div className="card-body">
-            <Target className="w-12 h-12 text-primary mb-4" />
+            <Target className="w-12 h-12 text-green-500 mb-4" />
             <h3 className="card-title text-xl mb-2">Accurate Detection</h3>
             <p className="text-muted-foreground">
               Precisely detect where your emails land across multiple test inboxes.
@@ -33,9 +33,9 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="card bg-card border border-border hover:border-primary transition-all hover:scale-105">
+        <div className="card bg-card border border-border hover:border-green-500 transition-all hover:scale-105">
           <div className="card-body">
-            <FileText className="w-12 h-12 text-primary mb-4" />
+            <FileText className="w-12 h-12 text-green-500 mb-4" />
             <h3 className="card-title text-xl mb-2">Detailed Reports</h3>
             <p className="text-muted-foreground">
               Get comprehensive reports with deliverability scores and PDF exports.
@@ -43,9 +43,9 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="card bg-card border border-border hover:border-primary transition-all hover:scale-105">
+        <div className="card bg-card border border-border hover:border-green-500 transition-all hover:scale-105">
           <div className="card-body">
-            <TrendingUp className="w-12 h-12 text-primary mb-4" />
+            <TrendingUp className="w-12 h-12 text-green-500 mb-4" />
             <h3 className="card-title text-xl mb-2">Track History</h3>
             <p className="text-muted-foreground">
               Monitor your email performance over time with detailed statistics.
@@ -58,7 +58,7 @@ const Home = () => {
       <section className="card bg-card border border-border">
         <div className="card-body">
           <h2 className="card-title text-2xl mb-6 flex items-center gap-2">
-            <Mail className="w-6 h-6 text-primary" />
+            <Mail className="w-6 h-6 text-green-500" />
             Test Inboxes
           </h2>
           <p className="text-muted-foreground mb-6">
@@ -69,7 +69,7 @@ const Home = () => {
             {TEST_EMAILS.map((inbox) => (
               <div
                 key={inbox.id}
-                className="card bg-secondary border border-border hover:border-primary transition-all"
+                className="card bg-secondary border border-border hover:border-green-500 transition-all"
               >
                 <div className="card-body p-4">
                   <div className="flex items-center gap-3">
@@ -106,7 +106,7 @@ const Home = () => {
             { step: '4', title: 'Review', desc: 'Get detailed reports and improve deliverability' },
           ].map((item) => (
             <div key={item.step} className="text-center">
-              <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+              <div className="w-16 h-16 bg-green-500 text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                 {item.step}
               </div>
               <h3 className="font-semibold text-lg mb-2">{item.title}</h3>

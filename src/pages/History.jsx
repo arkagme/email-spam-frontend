@@ -102,13 +102,13 @@ const History = () => {
             <input
               type="email"
               placeholder="Enter your email to view history"
-              className="input input-bordered flex-1 min-w-[250px]"
+              className="input input-bordered flex-1 min-w-[250px] border-2 dark:border-gray-500 px-4 sm:px-6 py-2"
               value={userEmail}
               onChange={(e) => setUserEmail(e.target.value)}
             />
             <button
               type="submit"
-              className="btn btn-primary gap-2"
+              className="btn btn-primary gap-2 px-4 sm:px-6 py-2"
               disabled={searching}
             >
               {searching ? (
@@ -170,7 +170,7 @@ const History = () => {
                 <div className="flex gap-2 mt-4">
                   <Link
                     to={`/results/${test.testCode}`}
-                    className="btn btn-primary btn-sm"
+                    className="btn btn-info btn-sm"
                   >
                     View Details
                   </Link>

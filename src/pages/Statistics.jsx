@@ -76,13 +76,13 @@ const fetchStatistics = async (email) => {
             <input
               type="email"
               placeholder="Enter your email to view statistics"
-              className="input input-bordered flex-1 min-w-[250px]"
+              className="input input-bordered flex-1 min-w-[250px] border-2 dark:border-gray-500 px-4 sm:px-6 py-2"
               value={userEmail}
               onChange={(e) => setUserEmail(e.target.value)}
             />
             <button
               type="submit"
-              className="btn btn-primary gap-2"
+              className="btn btn-primary gap-2 px-4 sm:px-6 py-2"
               disabled={searching}
             >
               {searching ? (

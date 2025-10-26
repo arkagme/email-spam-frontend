@@ -23,7 +23,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 text-xl font-bold text-foreground hover:text-primary transition-colors">
-            <Mail className="w-6 h-6 text-primary" />
+            <Mail className="w-6 h-6 text-green-500" />
             <span className="hidden sm:inline">Email Spam Tester</span>
             <span className="sm:hidden">EST</span>
           </Link>
