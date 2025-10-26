@@ -22,7 +22,6 @@ const fetchResults = async (showToast = false) => {
       apiService.getTestResults(testCode),
     ]);
     
-    // Access the nested data correctly
     setStatus(statusRes.data.data);
     setResults(resultsRes.data.data);
     
@@ -82,12 +81,11 @@ const fetchResults = async (showToast = false) => {
   };
 
 const calculateScore = () => {
-  // Use the deliverabilityScore from the API directly
+
   if (results?.deliverabilityScore !== undefined) {
     return results.deliverabilityScore;
   }
-  
-  // Fallback to manual calculation if needed
+
   if (!results?.results) return 0;
   const inboxCount = results.results.filter(r => r.folder === 'inbox').length;
   const total = results.results.length;

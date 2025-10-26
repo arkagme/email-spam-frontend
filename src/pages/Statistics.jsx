@@ -20,7 +20,7 @@ const fetchStatistics = async (email) => {
     const response = await apiService.getTestStatistics(email);
     //console.log('API Response:', response.data); // Debug log
     
-    // Access the nested data property
+
     setStatistics(response.data.data);
     localStorage.setItem('userEmail', email);
     toast.success('Statistics loaded successfully!');

@@ -69,7 +69,7 @@ const handleDetect = async () => {
       
       // Show progress
       if (progress) {
-        toast.info(`Checking ${progress.total} inboxes:`);
+        toast.info(`Checking ${progress.total} inboxes`);
       }
       
       if (status === 'completed') {
