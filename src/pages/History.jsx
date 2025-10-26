@@ -19,7 +19,7 @@ const History = () => {
     setSearching(true);
     try {
       const response = await apiService.getTestHistory(email);
-      console.log('History Response:', response.data); // Debug log
+      //console.log('History Response:', response.data); // Debug log
       
       // Access the tests array from the nested data structure
       const historyData = response.data.data.tests || [];

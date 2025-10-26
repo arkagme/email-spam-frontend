@@ -24,7 +24,7 @@ const handleGenerateTest = async (e) => {
     setLoading(true);
     try {
       const response = await apiService.generateTest(email);
-      console.log('API Response:', response);
+      //console.log('API Response:', response);
       
       // Fix: Access the nested testCode from response.data.data
       const code = response.data.data.testCode;
@@ -63,7 +63,7 @@ const handleDetect = async () => {
     while (!isCompleted) {
       // Poll status every 2 seconds
       const statusResponse = await apiService.getTestStatus(testCode);
-      console.log('Status Response:', statusResponse.data); // Debug log
+      //console.log('Status Response:', statusResponse.data); // Debug log
       
       const { status, progress, deliverabilityScore } = statusResponse.data.data;
       
@@ -77,7 +77,7 @@ const handleDetect = async () => {
         
         // Get final results to ensure we have all data
         const resultsResponse = await apiService.getTestResults(testCode);
-        console.log('Final Results:', resultsResponse.data); // Debug log
+        //console.log('Final Results:', resultsResponse.data); // Debug log
         
         const finalScore = resultsResponse.data.data.deliverabilityScore;
         
@@ -103,7 +103,7 @@ const handleDetect = async () => {
   }
 };
 
-  console.log('Current testCode:', testCode);
+  //console.log('Current testCode:', testCode);
   return (
     <div className="max-w-4xl mx-auto animate-fade-in">
       <div className="text-center mb-8">

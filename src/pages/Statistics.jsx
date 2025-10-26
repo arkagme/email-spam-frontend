@@ -18,7 +18,7 @@ const fetchStatistics = async (email) => {
   setSearching(true);
   try {
     const response = await apiService.getTestStatistics(email);
-    console.log('API Response:', response.data); // Debug log
+    //console.log('API Response:', response.data); // Debug log
     
     // Access the nested data property
     setStatistics(response.data.data);
